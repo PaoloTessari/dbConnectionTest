@@ -39,18 +39,55 @@ if (Meteor.isServer) {
   });
 }
 Router.map(function() {
-    this.route('home', {path: '/'});
+    this.route('home', {path: '/'} );
 });
 
-Router.route('/test/MongoConnection', function () {
-    if(Meteor.isServer) {
+
+Router.route('/', { where: 'server' })
+    .put(function () {
+        // GET /webhooks/stripe
+    })
+    .post(function () {
+        // POST /webhooks/stripe
+    })
+    .put(function () {
+        // PUT /webhooks/stripe
+    })
+
+Router.route('/MongoConnection', function () {
+       var self = this;
         var mongoConn = new MongoConnection(Meteor.settings.DbConnections['MONGO']);
         mongoConn.open(function(err) {
-            if (err)
+            if (err) {
                 console.log('MongoConnection. open fail');
-            else
+                self.response.end('MongoConnection.open fail');
+            }
+            else {
+
                 console.log('MongoConnection.open success');
+            self.response.end('MongoConnection.open success');
+          }
         });
 
-    }
-});
+
+}, {where : 'server'});
+
+
+Router.route('/SequelizeConnection', function () {
+
+    var sqlConn = new SequelizeConnection(Meteor.settings.DbConnections['LINK01']);
+    var self = this;
+    sqlConn.open(function(err) {
+        if(err) {
+            //console.log('SequelizeConnection.open fail');
+            self.response.end('SequelizeConnection.open fail');
+        }
+
+        else
+            //console.log('SequelizeConnection.open success');
+            self.response.end('SequelizeConnection.open success');
+    });
+}, {where : 'server'});
+
+
+dbaccess
