@@ -1,3 +1,4 @@
+/*
 if (Meteor.isClient) {
   // counter starts at 0
   Session.setDefault('counter', 0);
@@ -15,9 +16,11 @@ if (Meteor.isClient) {
     }
   });
 }
+*/
 
 if (Meteor.isServer) {
   Meteor.startup(function () {
+      /*
       var mongoConn = new MongoConnection(Meteor.settings.DbConnections['MONGO']);
       mongoConn.open(function(err) {
           if(err)
@@ -32,6 +35,22 @@ if (Meteor.isServer) {
           else
           console.log('SequelizeConnection.open success');
        });
-
+*/
   });
 }
+Router.map(function() {
+    this.route('home', {path: '/'});
+});
+
+Router.route('/test/MongoConnection', function () {
+    if(Meteor.isServer) {
+        var mongoConn = new MongoConnection(Meteor.settings.DbConnections['MONGO']);
+        mongoConn.open(function(err) {
+            if (err)
+                console.log('MongoConnection. open fail');
+            else
+                console.log('MongoConnection.open success');
+        });
+
+    }
+});
