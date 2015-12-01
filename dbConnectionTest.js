@@ -42,7 +42,7 @@ Router.map(function() {
     this.route('home', {path: '/'} );
 });
 
-
+/*
 Router.route('/', { where: 'server' })
     .put(function () {
         // GET /webhooks/stripe
@@ -53,10 +53,11 @@ Router.route('/', { where: 'server' })
     .put(function () {
         // PUT /webhooks/stripe
     })
+*/
 
 Router.route('/MongoConnection', function () {
        var self = this;
-        var mongoConn = new MongoConnection(Meteor.settings.DbConnections['MONGO']);
+        var mongoConn = new MongoConnection(Meteor.settings.DbConnections['TEX']);
         mongoConn.open(function(err) {
             if (err) {
                 console.log('MongoConnection. open fail');
@@ -74,7 +75,6 @@ Router.route('/MongoConnection', function () {
 
 
 Router.route('/SequelizeConnection', function () {
-
     var sqlConn = new SequelizeConnection(Meteor.settings.DbConnections['LINK01']);
     var self = this;
     sqlConn.open(function(err) {
@@ -90,4 +90,3 @@ Router.route('/SequelizeConnection', function () {
 }, {where : 'server'});
 
 
-dbaccess

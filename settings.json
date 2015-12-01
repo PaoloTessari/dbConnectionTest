@@ -1,13 +1,15 @@
 {
-  "Setup": {
-    "port": 1962
-  },
-  "Databases": {
-    "local": "MONGO",
-    "link": "MFBSE_TEX"
+  "OpLog": {
+    "Setup": {
+      "port": 1962
+    },
+    "Databases": {
+      "local": "TEX",
+      "link": "LINK01"
+    }
   },
   "DbConnections": {
-    "MONGO": {
+    "TEX": {
       "dialect": "mongo",
       "path": "/shared/databases/mongo/test",
       "host": "127.0.0.1",
@@ -53,38 +55,64 @@
         "instanceName": "SQLEXPRESS"
       }
     }
-
   },
-  "docMaps": {
-    "shared": {
-      "fieldsMap": {
-        "_id": "mid"
+  "Def": {
+    "Collections": {
+      "doc": {
+        "fields": {
+          "_id": {
+            "fieldType": "OBJECT",
+            "linkFieldName": "mid"
+          },
+          "credate": {
+            "fieldType": "ISODATE"
+          },
+          "lastdate": {
+            "fieldType": "ISODATE"
+          },
+          "firstid": {
+            "fieldType " : "OBJECT"
+          },
+          "favoriteimg": {
+            "fieldType " : "OBJECT"
+          },
+          "endvdate": {
+            "fieldType " : "ISODATE"
+          }
+        }
       },
-      "fieldsType": {
-        "mid": "OBJECT",
-        "credate": "ISODATE",
-        "lastdate": "ISODATE",
-        "tags": "ARRAY"
+      "doc_obj": {
+        "fields": {
+          "sectid": {
+            "fieldType": "OBJECT"
+          },
+          "credate": {
+            "fieldType": "ISODATE"
+          },
+          "lastdate": {
+            "fieldType": "ISODATE"
+          }
+        }
+      },
+      "doc_sect": {
+        "fields": {
+          "docid": {
+            "fieldType": "OBJECT"
+          },
+          "credate": {
+            "fieldType": "ISODATE"
+          },
+          "lastdate": {
+            "fieldType": "ISODATE"
+          }
+        }
       }
-    },
-    "doc_obj": {
-      "fieldsType": {
-        "sectid": "OBJECT"
-      }
-    },
-    "doc_sect": {
-      "fieldsType": {
-        "docid": "OBJECT"
-      }
-    },
-    "doc": {
-      "fieldsType": {
-        "firstid": "OBJECT",
-        "favoriteimg": "OBJECT",
-        "endvdate": "ISODATE"
-      }
+
+
     }
   }
 }
+
+
 
 
