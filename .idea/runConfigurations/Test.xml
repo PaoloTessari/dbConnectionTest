@@ -1,0 +1,22 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="Test" type="meteor-app-runner" factoryName="Meteor" programParameters="--settings settings.json --debug-port=2004">
+    <option name="envs">
+      <entry key="PACKAGE_DIRS" value="$PROJECT_DIR$/../../packages/" />
+    </option>
+    <option name="exePath" value="/usr/local/bin/meteor" />
+    <option name="name" value="Test" />
+    <option name="startBrowserSettings">
+      <browser url="http://localhost:3000" />
+    </option>
+    <meteor-runner-state>
+      <option name="startBrowserSettings">
+        <browser url="http://localhost:3000" />
+      </option>
+    </meteor-runner-state>
+    <RunnerSettings RunnerId="Basic" />
+    <RunnerSettings RunnerId="MeteorDebugRunner" />
+    <ConfigurationWrapper RunnerId="Basic" />
+    <ConfigurationWrapper RunnerId="MeteorDebugRunner" />
+    <method />
+  </configuration>
+</component>
