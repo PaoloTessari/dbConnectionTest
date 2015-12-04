@@ -5,7 +5,7 @@
     },
     "Databases": {
       "local": "TEX",
-      "link": "LINK01"
+      "link": "MFBSE_TEX"
     }
   },
   "DbConnections": {
@@ -49,7 +49,7 @@
       "dialect": "mssql",
       "host": "txtsvv09",
       "username": "sa",
-      "database": "MFBSE_TEX",
+      "database": "MFBSE_TEST",
       "password": "manager",
       "dialectOptions": {
         "instanceName": "SQLEXPRESS"
