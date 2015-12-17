@@ -1,118 +1,116 @@
 {
-  "OpLog": {
-    "Setup": {
-      "port": 1962
-    },
-    "Databases": {
-      "local": "TEX",
-      "link": "LINK01"
-    }
-  },
-  "DbConnections": {
-    "TEX": {
-      "dialect": "mongo",
-      "path": "/shared/databases/mongo/test",
-      "host": "127.0.0.1",
-      "port": 1961,
-      "db": "tex"
-    },
-    "PLMSQL": {
-      "dialect": "postgres",
-      "host": "localhost",
-      "port": 5432,
-      "database": "PLM",
-      "user": "postgres",
-      "password": "postgres"
-    },
-    "REPLICASQL": {
-      "dialect": "mysql",
-      "host": "localhost",
-      "port": 3306,
-      "database": "public",
-      "user": "root",
-      "password": "root",
-      "dialectOptions": {
-        "socketPath": "var/run/mysqld/mysqld.sock"
-      }
-    },
-    "LINK01": {
-      "dialect": "mssql",
-      "host": "192.168.157.131",
-      "username": "sa",
-      "database": "LINK01",
-      "password": "manager",
-      "dialectOptions": {
-        "instanceName": "SQLEXPRESS"
-      }
-    },
-    "MFBSE_TEX": {
-      "dialect": "mssql",
-      "host": "txtsvv09",
-      "username": "sa",
-      "database": "MFBSE_TEX",
-      "password": "manager",
-      "dialectOptions": {
-        "instanceName": "SQLEXPRESS"
-      }
-    }
-  },
-  "Def": {
-    "Collections": {
-      "doc": {
-        "fields": {
-          "_id": {
-            "fieldType": "OBJECT",
-            "linkFieldName": "mid"
-          },
-          "credate": {
-            "fieldType": "ISODATE"
-          },
-          "lastdate": {
-            "fieldType": "ISODATE"
-          },
-          "firstid": {
-            "fieldType " : "OBJECT"
-          },
-          "favoriteimg": {
-            "fieldType " : "OBJECT"
-          },
-          "endvdate": {
-            "fieldType " : "ISODATE"
-          }
-        }
+   "OpLog":{
+      "Setup":{
+         "port":1962
       },
-      "doc_obj": {
-        "fields": {
-          "sectid": {
-            "fieldType": "OBJECT"
-          },
-          "credate": {
-            "fieldType": "ISODATE"
-          },
-          "lastdate": {
-            "fieldType": "ISODATE"
-          }
-        }
-      },
-      "doc_sect": {
-        "fields": {
-          "docid": {
-            "fieldType": "OBJECT"
-          },
-          "credate": {
-            "fieldType": "ISODATE"
-          },
-          "lastdate": {
-            "fieldType": "ISODATE"
-          }
-        }
+      "Databases":{
+         "local":"TEX",
+         "link":"LINK01"
       }
-
-
-    }
-  }
+   },
+   "DbConnections":{
+      "TEX":{
+         "dialect":"mongo",
+         "path":"/shared/databases/mongo/test",
+         "host":"127.0.0.1",
+         "port":1961,
+         "db":"tex"
+      },
+      "POSTGRES":{
+         "dialect":"postgresql",
+         "host":"localhost",
+         "port":5432,
+         "database":"PLM",
+         "user":"postgres",
+         "password":"postgres"
+      },
+      "REPLICASQL":{
+         "dialect":"mysql",
+         "host":"localhost",
+         "port":3306,
+         "database":"public",
+         "user":"root",
+         "password":"root",
+         "dialectOptions":{
+            "socketPath":"var/run/mysqld/mysqld.sock"
+         }
+      },
+      "MSSQL":{
+         "dialect":"mssql",
+         "host":"192.168.157.131",
+         "username":"sa",
+         "database":"LINK01",
+         "password":"manager",
+         "dialectOptions":{
+            "instanceName":"SQLEXPRESS"
+         }
+      },
+      "MFBSE_TEX":{
+         "dialect":"mssql",
+         "host":"txtsvv09",
+         "username":"sa",
+         "database":"MFBSE_TEX",
+         "password":"manager",
+         "dialectOptions":{
+            "instanceName":"SQLEXPRESS"
+         }
+      }
+   },
+   "Def":{
+      "Collections":{
+         "extend":{
+            "fields":{
+               "credate":{
+                  "fieldType":"ISODATE"
+               },
+               "lastdate":{
+                  "fieldType":"ISODATE"
+               }
+            }
+         },
+         "doc":{
+            "fields":{
+               "_id":{
+                  "fieldType":"OBJECT",
+                  "linkFieldName":"mid"
+               },
+               "firstid":{
+                  "fieldType ":"OBJECT"
+               },
+               "favoriteimg":{
+                  "fieldType ":"OBJECT"
+               },
+               "endvdate":{
+                  "fieldType ":"ISODATE"
+               }
+            }
+         },
+         "doc_obj":{
+            "fields":{
+               "sectid":{
+                  "fieldType":"OBJECT"
+               },
+               "credate":{
+                  "fieldType":"ISODATE"
+               },
+               "lastdate":{
+                  "fieldType":"ISODATE"
+               }
+            }
+         },
+         "doc_sect":{
+            "fields":{
+               "docid":{
+                  "fieldType":"OBJECT"
+               },
+               "credate":{
+                  "fieldType":"ISODATE"
+               },
+               "lastdate":{
+                  "fieldType":"ISODATE"
+               }
+            }
+         }
+      }
+   }
 }
-
-
-
-
