@@ -57,7 +57,7 @@ Router.route('/', { where: 'server' })
 
 Router.route('/MongoConnection', function () {
        var self = this;
-        var mongoConn = new MongoConnection(Meteor.settings.DbConnections['TEX']);
+        var mongoConn = new MongoConnection(Meteor.settings.DbConnections['MFBSE_TEX']);
         mongoConn.open(function(err) {
             if (err) {
                 console.log('MongoConnection. open fail');
